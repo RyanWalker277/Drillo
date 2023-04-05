@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "drillo"
+version = "0.1.0"
+description = ""
+authors = ["Ryanwalker277 <andianurag277@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+django = "^4.2"
+django-restframework = "^0.0.1"
+python-dotenv = "^1.0.0"
+django-unfold = "^0.5.0"
+djangorestframework = "^3.14.0"
+jinja2 = "^3.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

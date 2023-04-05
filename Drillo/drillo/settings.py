@@ -1,7 +1,7 @@
+from pathlib import Path
 import os
 from dotenv import load_dotenv
 load_dotenv()
-from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-21=+!uuy3k_c&osd)gi7k_r1dd%)h9iz6g_26e%pg9i&ba7=5q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG') 
+DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = os.environ.get('HOSTS').split(' ')
 
@@ -22,12 +22,19 @@ ALLOWED_HOSTS = os.environ.get('HOSTS').split(' ')
 # Application definition
 
 INSTALLED_APPS = [
+    'unfold',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # RestFramework
+    'rest_framework',
+    'django.contrib.humanize',
+    'jinja2',
+    # CustomApps
+    'eventman',
 ]
 
 MIDDLEWARE = [
@@ -43,6 +50,13 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'drillo.urls'
 
 TEMPLATES = [
+    {
+        "BACKEND": "django.template.backends.jinja2.Jinja2",
+        'DIRS': [
+            'jinja2',
+        ],
+        "APP_DIRS": True,
+    },
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
