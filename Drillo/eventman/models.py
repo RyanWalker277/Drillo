@@ -1,8 +1,16 @@
 from django.db import models
+from django.urls import reverse
 
-class Hero(models.Model):
-    name = models.CharField(max_length=60)
-    alias = models.CharField(max_length=60)
-    
-    def __str__(self):
-        return self.name
+class FormSubmission(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    message = models.TextField()
+    page_url = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True, max_length=255)
+
+    def save(self, *args, **kwargs):
+        self.slug = f"{self.name.replace(' ', '-').lower()}-{self.name.replace(' ', '-').lower()}"
+        super(FormSubmission, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('page_preview', args=[self.slug])

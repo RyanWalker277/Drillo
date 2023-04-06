@@ -1,7 +1,5 @@
 from django.contrib import admin
 from unfold.admin import ModelAdmin
-from .models import Hero
+from .models import FormSubmission
 
-@admin.register(Hero)
-class CustomAdminClass(ModelAdmin):
-    pass
+admin.site.register(FormSubmission)
