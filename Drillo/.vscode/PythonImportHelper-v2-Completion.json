@@ -17,11 +17,11 @@
         "documentation": {}
     },
     {
-        "label": "Environment",
-        "importPath": "jinja2",
-        "description": "jinja2",
+        "label": "staticfiles_storage",
+        "importPath": "django.contrib.staticfiles.storage",
+        "description": "django.contrib.staticfiles.storage",
         "isExtraImport": true,
-        "detail": "jinja2",
+        "detail": "django.contrib.staticfiles.storage",
         "documentation": {}
     },
     {
@@ -49,7 +49,7 @@
         "documentation": {}
     },
     {
-        "label": "include",
+        "label": "reverse",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -65,11 +65,43 @@
         "documentation": {}
     },
     {
-        "label": "staticfiles_storage",
-        "importPath": "django.contrib.staticfiles.storage",
-        "description": "django.contrib.staticfiles.storage",
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
         "isExtraImport": true,
-        "detail": "django.contrib.staticfiles.storage",
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "NoReverseMatch",
+        "importPath": "django.urls.exceptions",
+        "description": "django.urls.exceptions",
+        "isExtraImport": true,
+        "detail": "django.urls.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "Environment",
+        "importPath": "jinja2",
+        "description": "jinja2",
+        "isExtraImport": true,
+        "detail": "jinja2",
+        "documentation": {}
+    },
+    {
+        "label": "FileSystemLoader",
+        "importPath": "jinja2",
+        "description": "jinja2",
+        "isExtraImport": true,
+        "detail": "jinja2",
         "documentation": {}
     },
     {
@@ -105,11 +137,67 @@
         "documentation": {}
     },
     {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
         "isExtraImport": true,
         "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -153,27 +241,11 @@
         "documentation": {}
     },
     {
-        "label": "serializers",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
         "isExtraImport": true,
-        "detail": "rest_framework",
-        "documentation": {}
-    },
-    {
-        "label": "routers",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
-        "isExtraImport": true,
-        "detail": "rest_framework",
-        "documentation": {}
-    },
-    {
-        "label": "viewsets",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
-        "isExtraImport": true,
-        "detail": "rest_framework",
+        "detail": "django",
         "documentation": {}
     },
     {
@@ -182,6 +254,22 @@
         "description": "django.test",
         "isExtraImport": true,
         "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "csrf_exempt",
+        "importPath": "django.views.decorators.csrf",
+        "description": "django.views.decorators.csrf",
+        "isExtraImport": true,
+        "detail": "django.views.decorators.csrf",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
         "documentation": {}
     },
     {
@@ -207,16 +295,7 @@
         "kind": 2,
         "importPath": "drillo.jinja2",
         "description": "drillo.jinja2",
-        "peekOfCode": "def environment(**options):\n\tenv = Environment(**options)\n\tenv.globals.update({\n\t\t\"static\": staticfiles_storage.url,\n\t\t\"url\": reverse\n\t})\n\treturn env",
-        "detail": "drillo.jinja2",
-        "documentation": {}
-    },
-    {
-        "label": "\tenv",
-        "kind": 5,
-        "importPath": "drillo.jinja2",
-        "description": "drillo.jinja2",
-        "peekOfCode": "\tenv = Environment(**options)\n\tenv.globals.update({\n\t\t\"static\": staticfiles_storage.url,\n\t\t\"url\": reverse\n\t})\n\treturn env",
+        "peekOfCode": "def environment(**options):\n    env = Environment(**options)\n    env.loader = FileSystemLoader(settings.JINJA2_TEMPLATE_DIRS)\n    try:\n        # Set the value for the 'static' function in the Jinja2 environment globals\n        env.globals['static'] = staticfiles_storage.url\n    except NoReverseMatch:\n        pass\n    env.globals['url'] = reverse\n    return env",
         "detail": "drillo.jinja2",
         "documentation": {}
     },
@@ -234,7 +313,7 @@
         "kind": 5,
         "importPath": "drillo.settings",
         "description": "drillo.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-21=+!uuy3k_c&osd)gi7k_r1dd%)h9iz6g_26e%pg9i&ba7=5q'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = os.getenv('DEBUG')\nALLOWED_HOSTS = os.environ.get('HOSTS').split(' ')\n# Application definition\nINSTALLED_APPS = [\n    'unfold',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-21=+!uuy3k_c&osd)gi7k_r1dd%)h9iz6g_26e%pg9i&ba7=5q'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = os.getenv('DEBUG')\nALLOWED_HOSTS = os.environ.get('HOSTS').split(' ')\n# Application definition\nINSTALLED_APPS = [\n    'unfold',\n    'jinja2',\n    'django.contrib.admin',\n    'django.contrib.auth',",
         "detail": "drillo.settings",
         "documentation": {}
     },
@@ -243,7 +322,7 @@
         "kind": 5,
         "importPath": "drillo.settings",
         "description": "drillo.settings",
-        "peekOfCode": "DEBUG = os.getenv('DEBUG')\nALLOWED_HOSTS = os.environ.get('HOSTS').split(' ')\n# Application definition\nINSTALLED_APPS = [\n    'unfold',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
+        "peekOfCode": "DEBUG = os.getenv('DEBUG')\nALLOWED_HOSTS = os.environ.get('HOSTS').split(' ')\n# Application definition\nINSTALLED_APPS = [\n    'unfold',\n    'jinja2',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "drillo.settings",
         "documentation": {}
     },
@@ -252,7 +331,7 @@
         "kind": 5,
         "importPath": "drillo.settings",
         "description": "drillo.settings",
-        "peekOfCode": "ALLOWED_HOSTS = os.environ.get('HOSTS').split(' ')\n# Application definition\nINSTALLED_APPS = [\n    'unfold',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "ALLOWED_HOSTS = os.environ.get('HOSTS').split(' ')\n# Application definition\nINSTALLED_APPS = [\n    'unfold',\n    'jinja2',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
         "detail": "drillo.settings",
         "documentation": {}
     },
@@ -261,7 +340,7 @@
         "kind": 5,
         "importPath": "drillo.settings",
         "description": "drillo.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'unfold',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # RestFramework\n    'rest_framework',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'unfold',\n    'jinja2',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # RestFramework",
         "detail": "drillo.settings",
         "documentation": {}
     },
@@ -279,7 +358,16 @@
         "kind": 5,
         "importPath": "drillo.settings",
         "description": "drillo.settings",
-        "peekOfCode": "ROOT_URLCONF = 'drillo.urls'\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.jinja2.Jinja2\",\n        \"DIRS\": [],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"environment\": \"drillo.jinja2.environment\"\n        }\n    },",
+        "peekOfCode": "ROOT_URLCONF = 'drillo.urls'\nJINJA2_TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.jinja2.Jinja2\",\n        'DIRS': [\n            'templates',\n        ],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {",
+        "detail": "drillo.settings",
+        "documentation": {}
+    },
+    {
+        "label": "JINJA2_TEMPLATE_DIRS",
+        "kind": 5,
+        "importPath": "drillo.settings",
+        "description": "drillo.settings",
+        "peekOfCode": "JINJA2_TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.jinja2.Jinja2\",\n        'DIRS': [\n            'templates',\n        ],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"environment\": \"drillo.jinja2.environment\"",
         "detail": "drillo.settings",
         "documentation": {}
     },
@@ -288,7 +376,7 @@
         "kind": 5,
         "importPath": "drillo.settings",
         "description": "drillo.settings",
-        "peekOfCode": "TEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.jinja2.Jinja2\",\n        \"DIRS\": [],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"environment\": \"drillo.jinja2.environment\"\n        }\n    },\n    {",
+        "peekOfCode": "TEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.jinja2.Jinja2\",\n        'DIRS': [\n            'templates',\n        ],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"environment\": \"drillo.jinja2.environment\"\n        },",
         "detail": "drillo.settings",
         "documentation": {}
     },
@@ -324,7 +412,7 @@
         "kind": 5,
         "importPath": "drillo.settings",
         "description": "drillo.settings",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'staticfiles')\n]",
         "detail": "drillo.settings",
         "documentation": {}
     },
@@ -333,7 +421,7 @@
         "kind": 5,
         "importPath": "drillo.settings",
         "description": "drillo.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'staticfiles')\n]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'static')",
         "detail": "drillo.settings",
         "documentation": {}
     },
@@ -342,7 +430,7 @@
         "kind": 5,
         "importPath": "drillo.settings",
         "description": "drillo.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'staticfiles')\n]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'static')\n# Default primary key field type",
         "detail": "drillo.settings",
         "documentation": {}
     },
@@ -351,7 +439,7 @@
         "kind": 5,
         "importPath": "drillo.settings",
         "description": "drillo.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'staticfiles')\n]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'static')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field",
         "detail": "drillo.settings",
         "documentation": {}
     },
@@ -360,7 +448,25 @@
         "kind": 5,
         "importPath": "drillo.settings",
         "description": "drillo.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'staticfiles')\n]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'static')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "drillo.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_DIRS",
+        "kind": 5,
+        "importPath": "drillo.settings",
+        "description": "drillo.settings",
+        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'staticfiles')\n]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'static')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "drillo.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_ROOT",
+        "kind": 5,
+        "importPath": "drillo.settings",
+        "description": "drillo.settings",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, 'static')\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "drillo.settings",
         "documentation": {}
     },
@@ -378,8 +484,17 @@
         "kind": 5,
         "importPath": "drillo.urls",
         "description": "drillo.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('event/', include('eventman.urls')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('event/', include('eventman.urls')),\n    path('', views.home, name='home'),\n]",
         "detail": "drillo.urls",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "drillo.views",
+        "description": "drillo.views",
+        "peekOfCode": "def home(request):\n    context = {'title': 'My Page'}\n    return render(request, 'index.html', context)",
+        "detail": "drillo.views",
         "documentation": {}
     },
     {
@@ -401,12 +516,21 @@
         "documentation": {}
     },
     {
-        "label": "CustomAdminClass",
+        "label": "Migration",
         "kind": 6,
-        "importPath": "eventman.admin",
-        "description": "eventman.admin",
-        "peekOfCode": "class CustomAdminClass(ModelAdmin):\n    pass",
-        "detail": "eventman.admin",
+        "importPath": "eventman.migrations.0002_formsubmission_delete_hero",
+        "description": "eventman.migrations.0002_formsubmission_delete_hero",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"eventman\", \"0001_initial\"),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name=\"FormSubmission\",\n            fields=[\n                (\n                    \"id\",",
+        "detail": "eventman.migrations.0002_formsubmission_delete_hero",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "eventman.migrations.0003_formsubmission_slug",
+        "description": "eventman.migrations.0003_formsubmission_slug",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"eventman\", \"0002_formsubmission_delete_hero\"),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name=\"formsubmission\",\n            name=\"slug\",\n            field=models.SlugField(default=\"sample\", max_length=255, unique=True),\n            preserve_default=False,",
+        "detail": "eventman.migrations.0003_formsubmission_slug",
         "documentation": {}
     },
     {
@@ -419,30 +543,21 @@
         "documentation": {}
     },
     {
-        "label": "Hero",
+        "label": "FormSubmissionForm",
+        "kind": 6,
+        "importPath": "eventman.forms",
+        "description": "eventman.forms",
+        "peekOfCode": "class FormSubmissionForm(forms.ModelForm):\n    class Meta:\n        model = FormSubmission\n        fields = ('name', 'email', 'message', 'page_url')",
+        "detail": "eventman.forms",
+        "documentation": {}
+    },
+    {
+        "label": "FormSubmission",
         "kind": 6,
         "importPath": "eventman.models",
         "description": "eventman.models",
-        "peekOfCode": "class Hero(models.Model):\n    name = models.CharField(max_length=60)\n    alias = models.CharField(max_length=60)\n    def __str__(self):\n        return self.name",
+        "peekOfCode": "class FormSubmission(models.Model):\n    name = models.CharField(max_length=255)\n    email = models.EmailField()\n    message = models.TextField()\n    page_url = models.CharField(max_length=255)\n    slug = models.SlugField(unique=True, max_length=255)\n    def save(self, *args, **kwargs):\n        self.slug = f\"{self.name.replace(' ', '-').lower()}-{self.name.replace(' ', '-').lower()}\"\n        super(FormSubmission, self).save(*args, **kwargs)\n    def get_absolute_url(self):",
         "detail": "eventman.models",
-        "documentation": {}
-    },
-    {
-        "label": "HeroSerializer",
-        "kind": 6,
-        "importPath": "eventman.serializers",
-        "description": "eventman.serializers",
-        "peekOfCode": "class HeroSerializer(serializers.HyperlinkedModelSerializer):\n    class Meta:\n        model = Hero\n        fields = ('name', 'alias')",
-        "detail": "eventman.serializers",
-        "documentation": {}
-    },
-    {
-        "label": "router",
-        "kind": 5,
-        "importPath": "eventman.urls",
-        "description": "eventman.urls",
-        "peekOfCode": "router = routers.DefaultRouter()\nrouter.register(r'heroes', views.HeroViewSet)\nurlpatterns = [\n    path('', include(router.urls)),\n    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))\n]",
-        "detail": "eventman.urls",
         "documentation": {}
     },
     {
@@ -450,16 +565,25 @@
         "kind": 5,
         "importPath": "eventman.urls",
         "description": "eventman.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', include(router.urls)),\n    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))\n]",
+        "peekOfCode": "urlpatterns = [\n    path('submit-form', form_submission, name='form_submission'),\n    path('page-preview/<slug:slug>/', page_preview, name='page_preview'),\n]",
         "detail": "eventman.urls",
         "documentation": {}
     },
     {
-        "label": "HeroViewSet",
-        "kind": 6,
+        "label": "form_submission",
+        "kind": 2,
         "importPath": "eventman.views",
         "description": "eventman.views",
-        "peekOfCode": "class HeroViewSet(viewsets.ModelViewSet):\n    queryset = Hero.objects.all().order_by('name')\n    serializer_class = HeroSerializer",
+        "peekOfCode": "def form_submission(request):\n    if request.method == 'POST':\n        form = FormSubmissionForm(request.POST)\n        if form.is_valid():\n            submission = form.save(commit=False)\n            submission.slug = slugify(submission.title)\n            submission.save()\n            url = reverse('page_preview', args=[submission.slug])\n            return redirect(url)\n    else:",
+        "detail": "eventman.views",
+        "documentation": {}
+    },
+    {
+        "label": "page_preview",
+        "kind": 2,
+        "importPath": "eventman.views",
+        "description": "eventman.views",
+        "peekOfCode": "def page_preview(request,slug):\n    submission = FormSubmission.objects.get(slug=slug)\n    return render(request, 'rendered-page.jinja', {'submission': submission})",
         "detail": "eventman.views",
         "documentation": {}
     },

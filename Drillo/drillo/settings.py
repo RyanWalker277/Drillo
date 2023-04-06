@@ -23,6 +23,7 @@ ALLOWED_HOSTS = os.environ.get('HOSTS').split(' ')
 
 INSTALLED_APPS = [
     'unfold',
+    'jinja2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -32,7 +33,6 @@ INSTALLED_APPS = [
     # RestFramework
     'rest_framework',
     'django.contrib.humanize',
-    'jinja2',
     # CustomApps
     'eventman',
 ]
@@ -49,6 +49,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'drillo.urls'
 
+JINJA2_TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.jinja2.Jinja2",
@@ -56,6 +58,9 @@ TEMPLATES = [
             'templates',
         ],
         "APP_DIRS": True,
+        "OPTIONS": {
+            "environment": "drillo.jinja2.environment"
+        },
     },
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -120,7 +125,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'staticfiles')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
