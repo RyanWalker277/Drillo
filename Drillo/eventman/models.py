@@ -5,8 +5,7 @@ class FormSubmission(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField()
     message = models.TextField()
-    page_url = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True, max_length=255)
+    url = models.SlugField(unique=True, max_length=255)
 
     def save(self, *args, **kwargs):
         self.slug = f"{self.name.replace(' ', '-').lower()}-{self.name.replace(' ', '-').lower()}"

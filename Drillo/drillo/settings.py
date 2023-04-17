@@ -2,6 +2,7 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 load_dotenv()
+import jinja2 as jinja
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +24,6 @@ ALLOWED_HOSTS = os.environ.get('HOSTS').split(' ')
 
 INSTALLED_APPS = [
     'unfold',
-    'jinja2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     # RestFramework
     'rest_framework',
     'django.contrib.humanize',
+    'jinja2',
     # CustomApps
     'eventman',
 ]
@@ -49,18 +50,21 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'drillo.urls'
 
-JINJA2_TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
-
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.jinja2.Jinja2",
         'DIRS': [
             'templates',
-        ],
+        ],       
         "APP_DIRS": True,
-        "OPTIONS": {
-            "environment": "drillo.jinja2.environment"
-        },
+        'OPTIONS': {
+            'environment': 'drillo.jinja2.environment',
+            'extensions': [
+                'jinja2.ext.i18n',
+                'jinja2.ext.do',
+                'jinja2.ext.loopcontrols',
+            ],
+        },        
     },
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -125,14 +129,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles')
-]
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

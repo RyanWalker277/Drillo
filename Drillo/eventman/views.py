@@ -11,16 +11,14 @@ def form_submission(request):
         form = FormSubmissionForm(request.POST)
         if form.is_valid():
             submission = form.save(commit=False)
-            submission.slug = slugify(submission.title)
             submission.save()
-            url = reverse('page_preview', args=[submission.slug])
-            return redirect(url)
+            url = submission.url
+            return redirect(reverse('page_preview', kwargs={'slug': url}))
 
     else:
         form = FormSubmissionForm()
-    return render(request, 'form_submission.jinja', {'form': form})
+    return render(request, 'create.html', {'form': form})
 
-def page_preview(request,slug):
-    submission = FormSubmission.objects.get(slug=slug)
-    return render(request, 'rendered-page.jinja', {'submission': submission})
-
+def page_preview(request,url):
+    submission = FormSubmission.objects.get(url=url)
+    return render(request, 'rendered-page.html', {'submission': submission})
